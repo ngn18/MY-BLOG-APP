@@ -2,16 +2,16 @@ import {
   createBrowserRouter,
   RouterProvider,
   Route,
-  Outlet
+  Outlet,
 } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Write from "./pages/Write";
-import Home from "./pages/Home" ;
+import Home from "./pages/Home";
 import Single from "./pages/Single";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import "../src/"
+import "./style.scss"
 
 const Layout = () => {
   return (
@@ -50,13 +50,14 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
-]); 
+]);
 
 function App() {
   return (
     <div className="app">
-      <div className="container"></div>
-     <RouterProvider router = {router}/>
+      <div className="container">
+        <RouterProvider router={router} />
+      </div>
     </div>
   );
 }
