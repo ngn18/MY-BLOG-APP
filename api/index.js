@@ -5,6 +5,7 @@ import postRoutes from "./routes/posts.js";
 import cookieParser from "cookie-parser";
 import multer from "multer";
 
+
 const app = express();
 
 app.use(express.json());
@@ -20,7 +21,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-app.post("/api/upload", upload.single("file"), function (req, res) {
+app.post("/api/upload", upload.single("file"), function (req, res, next) {
   const file = req.file;
   res.status(200).json(file.filename);
 });
